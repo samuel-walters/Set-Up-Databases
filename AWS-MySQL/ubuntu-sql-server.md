@@ -46,3 +46,7 @@ sudo systemctl start mysql.service
 > 1. Open a new connection. The details should look like the ones filled in below:
 
 ![](https://i.imgur.com/uqvlPPH.png)
+
+### Connect Remotely with a Python Script
+
+> 1. View the syntax for remotely running commands using a [Python Script here](remote_connect.py).
