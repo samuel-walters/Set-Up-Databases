@@ -34,6 +34,7 @@ def run_sql_command(sql_command, query=False):
                 cursor.execute(sql_command)
                 if query:
                     result = cursor.fetchall()
+                    tunnel.close()
                     return result
                 connection.commit()
             except Exception as mysql_error:
