@@ -4,7 +4,7 @@ import pymysql
 remote_hostname = input("Please enter the remote hostname: ")
 host_user = input("Please enter the username used to connect to your remote host: ")
 # the path, for example, could be '~/.ssh/private_key.pem'.
-private_key = input("Please enter the path to your private key")
+private_key = input("Please enter the path to your private key: ")
 
 user_input = input("Please enter your MySQL username: ")
 password_input = input("Please enter the password for " + user_input + ": ")
