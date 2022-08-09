@@ -53,7 +53,7 @@ sudo systemctl start mysql.service
 
 > 1. View the syntax for remotely running commands using a [Python Script here](remote_connect.py).
 
-## Migrating an SQL database between EC2 Instances
+## Migrating a MySQL database between EC2 Instances
 
 > 1. Run this command on the database you wish to transfer: `mysqldump -u root -p --opt [database_name] > [database_name].sql`.
 > 2. If these instances use the same VPC, make sure the security group for the EC2 instance you are transferring the file to allows port 20 (the SSH port) for the private ip of the instance the file is being received from.  
