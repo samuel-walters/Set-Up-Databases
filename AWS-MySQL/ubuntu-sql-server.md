@@ -55,6 +55,8 @@ sudo systemctl start mysql.service
 
 ## Migrating a MySQL database between EC2 Instances
 
+Note: these are EC2 Instances on the same VPC. If your situation is different, use the public IPs of the instances instead of the private IPs.
+
 > 1. Run this command on the database you wish to transfer: `mysqldump -u root -p --opt [database_name] > [database_name].sql`.
 > 2. If these instances use the same VPC, make sure the security group for the EC2 instance you are transferring the file to allows port 20 (the SSH port) for the private ip of the instance the file is being received from.  
 > 3. The scp command may look like this if you use a private key to connect to your instance (note the private IP is being used here): `scp -i ~/.ssh/eng119.pem database_name.sql ubuntu@172.31.25.180:/home/ubuntu/`.
