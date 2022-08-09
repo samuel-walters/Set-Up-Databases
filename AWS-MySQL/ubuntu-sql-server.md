@@ -1,3 +1,5 @@
+# MySQL
+
 ## Install MySQL on an AWS EC2 Instance
 
 > 1. Create a new instance on AWS, and choose Ubuntu 20.04.
@@ -50,3 +52,12 @@ sudo systemctl start mysql.service
 ### Connect Remotely with a Python Script
 
 > 1. View the syntax for remotely running commands using a [Python Script here](remote_connect.py).
+
+## Migrating an SQL database between EC2 Instances
+
+> 1. Run this command on the database you wish to transfer: `mysqldump -u root -p --opt [database_name] > [database_name].sql`.
+> 2. If these instances use the same VPC, make sure the security group for the EC2 instance you are transferring the file to allows port 20 (the SSH port) for the private ip of the instance the file is being received from.  
+> 3. The scp command may look like this if you use a private key to connect to your instance (note the private IP is being used here): `scp -i ~/.ssh/eng119.pem database_name.sql ubuntu@172.31.25.180:/home/ubuntu/`.
+> 4. Once the file gets received, run this on your new instance: `mysql -u root -p existing_database_name_on_new_instance < /path/to/database_name.sql`. 
+
+
